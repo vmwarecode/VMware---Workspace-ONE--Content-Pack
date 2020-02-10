@@ -1,0 +1,1271 @@
+{
+  "name":"VMware - Workspace ONE",
+  "namespace":"com.vmware.workspace-one",
+  "contentPackId":"com.vmware.workspace-one",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"aw_airwatch_endpoint_name",
+    "preContext":"(GET |POST )",
+    "postContext":"(\\d+ | )",
+    "regexValue":"\\/airwatch\\/([a-zA-Z]+)\\/([\\/a-zA-Z]+)",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc2lso5qxiy3il5sw4zdqn5uw45c7nzqw2zi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_android_ver",
+    "preContext":"(Android |Android: )",
+    "postContext":"(\\;|\\)|\\:)",
+    "regexValue":"\\S+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc3teojxwszc7ozsxe000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_api_mam_apps",
+    "preContext":"(GET |POST )",
+    "postContext":"(\\/udid|\\/assignments)",
+    "regexValue":"\\/api\\/mam\\/apps(\\/(interna|public|purchased)l\\/\\d+)?",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4djl5wwc3k7mfyha4y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_app_catalog_error_reason",
+    "preContext":"Error\\s*\\S*\t",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dql5rwc5dbnrxwox3fojzg64s7ojswc43pny000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"appcatalog\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_application_id",
+    "preContext":"application id ",
+    "postContext":" on",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"appcatalog\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"aw_application_type",
+    "preContext":"ApplicationType: ",
+    "postContext":"\\, Platform",
+    "regexValue":"\\w+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3upfygk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_appname_is_iis",
+    "preContext":"\\S*",
+    "postContext":"\\S*",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnzqw2zk7nfzv62ljom000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"MATCH\",\"value\":\"IIS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_ares_api_urls",
+    "preContext":".*",
+    "postContext":".*",
+    "regexValue":"\\/api\\/(mam|mdm\\/profiles)\\/(?!(swagger|help))\\S+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4tfonpwc4djl52xe3dt",
+    "constraints":"{\"filters\":[{\"internalName\":\"cs_uri_stem\",\"displayName\":\"cs_uri_stem\",\"operator\":\"STARTS_WITH\",\"value\":\"/api/mam,/api/mdm/profiles\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_ares_console_page_urls",
+    "preContext":"\\S*",
+    "postContext":"\\S*",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4tfonpwg33oonxwyzk7obqwozk7ovzgy4y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"cs_uri_stem\",\"displayName\":\"cs_uri_stem\",\"operator\":\"STARTS_WITH\",\"value\":\"/AirWatch/Apps,/AirWatch/Profiles,/AirWatch/ProfileResource\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_ares_settings_pages",
+    "preContext":"(POST | GET )",
+    "postContext":"\\s",
+    "regexValue":"/AirWatch/Settings/(DeviceAndroidAgentSettings|DeviceIosAgentSettings|BrowserPolicies)",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4tfonpxgzluoruw4z3tl5ygcz3fom000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_api_execution_failed",
+    "preContext":"\\s+",
+    "postContext":"\\s+",
+    "regexValue":"Failed to execute API",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv6zlymvrxk5djn5xf6ztbnfwgkza0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_api_request_uri",
+    "preContext":"RequestUri:\\s+",
+    "postContext":"\\;\\s*RequestMethod:",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2i0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"airwatchapi\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_api_request_uri_2",
+    "preContext":"RequestUri:\\s*",
+    "postContext":"\\;\\s*RequestMethod:",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2k7gi000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"airwatchapi\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_api_response_time",
+    "preContext":"ResponseTime:\\s+",
+    "postContext":"ms[;\\s]+ RequestHeaders:",
+    "regexValue":"\\d*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfonyg63ttmvpxi2lnmu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"airwatchapi\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_api_username",
+    "preContext":"\\s*UserName:\\s*",
+    "postContext":"\\;",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv65ltmvzg4ylnmu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_app_version",
+    "preContext":"APP\\s+VERSION\\s+NAME\\s+=\\s+",
+    "postContext":"\\n",
+    "regexValue":"[0-9\\.]+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobyf65tfojzws33o",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_beacon_payload",
+    "preContext":"\\s+",
+    "postContext":"\\s+",
+    "regexValue":"The incoming Beacon payload contained these values",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3cmvqwg33ol5ygc6lmn5qwi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_console_invalid_user",
+    "preContext":"invalid user for console login: ",
+    "postContext":"[\\s|\\n|\\r|\\t]*",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3dn5xhg33mmvpws3twmfwgszc7ovzwk4q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"webconsole\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_deviceidentifier",
+    "preContext":"DeviceIdentifier:[\\s|\\n|\\r|\\t]+",
+    "postContext":"[\\s|\\n|\\r|\\t]*",
+    "regexValue":"[a-zA-Z0-9]*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3emv3gsy3fnfsgk3tunftgszls",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_enrolled_device_id",
+    "preContext":"\\s*device ID\\s*",
+    "postContext":"",
+    "regexValue":"\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf6zdfozuwgzk7nfsa0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices,devicemanagement\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_enrolled_user_id",
+    "preContext":"\\s+EnrollmentUserID\\s+",
+    "postContext":"\\s+",
+    "regexValue":"\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf65ltmvzf62le",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_exception_60",
+    "preContext":"\\*\\*\\*(\\s*)EXCEPTION(\\s*)\\*\\*\\*(\\s|\\n|\\t|\\r)*",
+    "postContext":"",
+    "regexValue":"[^:]{0,60}",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fpbrwk4dunfxw4xzwga000000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_location_group_id",
+    "preContext":"(\\s|;)\\s+LocationGroupID:\\s*",
+    "postContext":";(\\s*)UserID",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3mn5rwc5djn5xf6z3sn52xax3jmq000000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method",
+    "preContext":"(\\s)+Method:(\\s+)",
+    "postContext":";(\\s+)(Duration|Returns|Parameters|LocationGroupID)",
+    "regexValue":"[^; ]*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33e",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_duration",
+    "preContext":"(\\s|;)Duration:(\\s)+",
+    "postContext":"\\s+(ms)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5shk4tboruw63q0",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_param(API_URL)",
+    "preContext":"X-Original-URL:\\s+",
+    "postContext":"\\, ; ResponseHeaders",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5ygc4tbnuuecucjl5kvetbj",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_params",
+    "preContext":"(\\s|;)Parameters:(\\s)?",
+    "postContext":"(;)?",
+    "regexValue":"(.*)",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5ygc4tbnvzq0000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_params (Platform)",
+    "preContext":"(\\s|;)Platform=(\\s*)",
+    "postContext":";",
+    "regexValue":"[^:]*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5ygc4tbnvzsakcqnrqxiztpojwss000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_params(DevicePlatform1)",
+    "preContext":", Platform:\\s+",
+    "postContext":"\\, (Version|\\s+)",
+    "regexValue":"[^,]*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5ygc4tbnvzsqrdfozuwgzkqnrqxiztpojwtcki0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_params(DeviceVersion)",
+    "preContext":",\\s+Version:\\s+",
+    "postContext":"\\, (\\s+|IMEI)",
+    "regexValue":"[^,]+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5ygc4tbnvzsqrdfozuwgzkwmvzhg2lpnyuq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_params(systemApplication)",
+    "preContext":"systemApplication =\\s+",
+    "postContext":",",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5ygc4tbnvzsq43zon2gk3kbobygy2ldmf2gs33ofe000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_method_returns",
+    "preContext":"(\\s|;)Returns:(\\s)+",
+    "postContext":";\\sDuration",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3nmv2gq33el5zgk5dvojxhg000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_profile_payload",
+    "preContext":"[\\s|\\r|\\n|\\t]+",
+    "postContext":"[\\s|\\r|\\n|\\t]+ProfilePayload data:",
+    "regexValue":"([a-zA-Z]+|([a-zA-Z]+\\s[0-9\\/A-Za-z]+))",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3qojxwm2lmmvpxaylznrxwcza0",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_aspect_user_id",
+    "preContext":"(\\s|;)\\s+UserID:\\s+",
+    "postContext":";(\\s+)(UserName|Returns)*",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3vonsxex3jmq000000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_assignment_url",
+    "preContext":"(| POST )\\/(AirWatch|API)\\S+",
+    "postContext":" ",
+    "regexValue":"(assignments|SaveAssignmentChanges|SavePurchasedAppAssignmentChanges|BrowserPolicies|DeviceAndroidAgentSettings|DeviceiOSAgentSettings|DeviceProfileEdit|platforms\\/([a-zA-Z]+)\\/(create|update)|Apple|Android|WinRT)",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43tnftw43lfnz2f65lsnq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_assignment_url_before",
+    "preContext":"(| POST ) ",
+    "postContext":"((\\d+)?\\/(assignments|SaveAssignmentChanges|SavePurchasedAppAssignmentChanges|BrowserPolicies|DeviceAndroidAgentSettings|DeviceiOSAgentSettings|DeviceProfileEdit|platforms\\/([a-zA-Z]+)\\/(create|update)|udid\\/[A-Z0-9a-z]{32,40}\\/(Apple|Android|WinRT)))",
+    "regexValue":"\\/[a-zA-Z\\/]+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43tnftw43lfnz2f65lsnrpwezlgn5zgk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_auth_failure_reason",
+    "preContext":"Error\\s*\\S*\\s*",
+    "postContext":"\\s*(for|\\.)",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_acc_wiped_reason",
+    "preContext":"Boxer wiped : ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6yldmnpxo2lqmvsf64tfmfzw63q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_app_version",
+    "preContext":"APP\\s+VERSION\\s+NAME\\s+=\\s+",
+    "postContext":"",
+    "regexValue":"[0-9\\.]+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6ylqobpxmzlsonuw63q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_battery_level",
+    "preContext":"Battery level\\s{1,}:\\s{1,}",
+    "postContext":"",
+    "regexValue":"\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6ytbor2gk4tzl5wgk5tfnq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_ping_acc_id",
+    "preContext":"Ping task starting for\\s{1,}",
+    "postContext":"\\s{0,}",
+    "regexValue":"\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv6yldmnpwsza0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_ping_result",
+    "preContext":"Exchange ping finished with result\\s{1,}",
+    "postContext":"\\s{0,}",
+    "regexValue":"[\\-]*\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv64tfon2wy5a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_sync_account_id",
+    "preContext":"Syncing account ",
+    "postContext":"\\s{1,}mailbox",
+    "regexValue":"\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv6yldmnxxk3tul5uwi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_sync_command_result",
+    "preContext":"Sync command finished with result ",
+    "postContext":"",
+    "regexValue":"\\d",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv6y3pnvwwc3tel5zgk43vnr2a0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_sync_key",
+    "preContext":"(Email|Calendar|Contacts)\\)\\s{1,}with\\s{1,}syncKey ",
+    "postContext":"",
+    "regexValue":"\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv623fpe000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_sync_mailbox",
+    "preContext":"mailbox\\s{1,}\"",
+    "postContext":"\"\\s{1,}\\(class",
+    "regexValue":"[a-zA-Z]+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv63lbnfwge33y",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_boxer_sync_type",
+    "preContext":"\\(class\\s{1,}",
+    "postContext":"\\)\\s{1,}with",
+    "regexValue":"Email|Contacts|Calendar",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv65dzobsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_cc_md_svc_log_level",
+    "preContext":"\\d*\\)\\s*",
+    "postContext":"\\s*\\S*",
+    "regexValue":"\\w+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"cloudconnector,mydevice,services,webconsole,deviceservices\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_chrome_ver",
+    "preContext":"Chrome/",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg2dsn5wwkx3wmvza0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_console_application_group",
+    "preContext":"ApplicationGroup ID is\\s*",
+    "postContext":"\\s+\\S*",
+    "regexValue":"\\d*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mfyha3djmnqxi2lpnzpwo4tpovya0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"webconsole\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_console_device_id",
+    "preContext":"DeviceId: ",
+    "postContext":"\\, DeviceType",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpwsza0",
+    "constraints":"{\"searchTerms\":\"console\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_console_device_type",
+    "preContext":"DeviceType: ",
+    "postContext":"\\,\\s+",
+    "regexValue":"\\w+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"console\"}",
+    "info":null
+  }, {
+    "displayName":"aw_console_user_id",
+    "preContext":"userID: ",
+    "postContext":"\\, userRole",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7nfsa0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"webconsole\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_console_user_role",
+    "preContext":"userRole: ",
+    "postContext":"\\, roleLG",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7ojxwyzi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"webconsole\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_console_user_type",
+    "preContext":"UserType: ",
+    "postContext":"\\, userID",
+    "regexValue":"\\w+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7or4xazi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"webconsole\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_device identification",
+    "preContext":"deviceid: ",
+    "postContext":"\\, mask",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkidjmrsw45djmzuwgylunfxw4000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_device_id",
+    "preContext":"DeviceId:",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3jmq000000",
+    "constraints":"{\"searchTerms\":\"app\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_device_serial_number",
+    "preContext":"\\-\\s+",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3tmvzgsylml5xhk3lcmvza0000",
+    "constraints":"{\"searchTerms\":\"serial number\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"services\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_email_pwd_auth",
+    "preContext":"authentication: ",
+    "postContext":" \\-",
+    "regexValue":"\\S+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwk3lbnfwf64dxmrpwc5luna000000",
+    "constraints":"{\"searchTerms\":\"LdapDirectoryService\"}",
+    "info":null
+  }, {
+    "displayName":"aw_firefox_ver",
+    "preContext":"Firefox/",
+    "postContext":"",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwm2lsmvtg66c7ozsxe000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_ios_ver",
+    "preContext":"iOS ",
+    "postContext":"(\\;|\\)|\\:|\\s+)",
+    "regexValue":"\\d+.\\d+.\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pws33tl53gk4q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_log_level",
+    "preContext":"\\,\\d+\\s*",
+    "postContext":"\\s*\\S*",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwy33hl5wgk5tfnq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_logger_has_bussinessimpl_or_providerimpl",
+    "preContext":"\\s*",
+    "postContext":"\\s*",
+    "regexValue":"\\s*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwy33hm5sxex3imfzv6ytvonzws3tfonzws3lqnrpw64s7obzg65tjmrsxe2lnobwa0000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"logger\",\"displayName\":\"logger\",\"operator\":\"MATCH\",\"value\":\"\\\\S+((BusinessImpl|ProviderImpl|Controllers)\\\\S*(Application|Profile|Apps))\\\\S*\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_main_endpoint_end",
+    "preContext":"(\\S+\\/(udid|apps))\\/[0-9A-F]{5,}\\/?([0-9]{1,6})?",
+    "postContext":" ",
+    "regexValue":"[a-zA-Z\\/]+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw2yljnzpwk3teobxws3tul5sw4za0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_main_endpoint_no_udid",
+    "preContext":"[POST |GET ]",
+    "postContext":"(\\s|\\d+)",
+    "regexValue":"\\/api\\/((?![A-Fa-f0-9\\-]{32,40})(?![0-9]+)\\S)*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw2yljnzpwk3teobxws3tul5xg6x3vmruwi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_main_endpoint_start",
+    "preContext":"(GET |POST )",
+    "postContext":"[0-9A-F]{5,}\\/?([0-9]{1,4})?",
+    "regexValue":"(\\S+\\/([a-zA-Z]+))\\/",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw2yljnzpwk3teobxws3tul5zxiylsoq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_mydevice_user",
+    "preContext":"User:",
+    "postContext":"\\,\\s*",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw26lemv3gsy3fl52xgzls",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"mydevice\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_no_sample_in_logger",
+    "preContext":"\\S*",
+    "postContext":"\\S*",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw4327onqw24dmmvpws3s7nrxwoz3foi000000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"logger\",\"displayName\":\"logger\",\"operator\":\"MATCH\",\"value\":\"^((?!(Sample|Android|Windows|Apple)).)*$\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_profiles_update_create",
+    "preContext":"(POST |GET )",
+    "postContext":"\\s",
+    "regexValue":"(\\/api\\/mdm\\/profiles\\/platforms\\/[a-zA-Z]+\\/(create|update)|/AirWatch/Profiles/DeviceProfileEdit)",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxa4tpmzuwyzltl52xazdborsv6y3smvqxizi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_provider_is_api",
+    "preContext":"\\s+",
+    "postContext":"\\s+",
+    "regexValue":"[a-zA-Z0-9]+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxa4tpozuwizlsl5uxgx3bobuq0000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"STARTS_WITH\",\"value\":\"API,airwatchapi\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_provider_is_cn",
+    "preContext":"\\s*",
+    "postContext":"\\s*",
+    "regexValue":"\\s*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxa4tpozuwizlsl5uxgx3dny000000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"WebConsole\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_provider_is_ds",
+    "preContext":"\\s*",
+    "postContext":"\\s*",
+    "regexValue":"\\s*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxa4tpozuwizlsl5uxgx3eom000000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_safari_ver",
+    "preContext":"Safari/",
+    "postContext":"",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxgylgmfzgsx3wmvza0000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_saveassignmentchanges",
+    "preContext":"(GET | POST )",
+    "postContext":"\\s",
+    "regexValue":"(/AirWatch/Apps/Edit/(SaveAssignmentChanges|SavePurchasedAppAssignmentChanges))",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxgylwmvqxg43jm5xg2zloorrwqylom5sxg000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_service_exception",
+    "preContext":"\\*\\*\\*\\s*EXCEPTION\\s*\\*\\*\\*",
+    "postContext":"(\\s*|\\s*(Method)*)",
+    "regexValue":".*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxgzlsozuwgzk7mv4ggzlqoruw63q0",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"airwatchapi,deviceservices\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_targeted_log_device_id",
+    "preContext":"\\d*\\-",
+    "postContext":"\\]   \\(\\d*",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxiylsm5sxizlel5wg6z27mrsxm2ldmvpwsza0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_time_taken_sec",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"\\d+$",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxi2lnmvpxiyllmvxf643fmm000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"cs_uri_stem\",\"displayName\":\"cs_uri_stem\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_unique_application_identifier",
+    "preContext":"UniqueApplicationIdentifer: ",
+    "postContext":"\\, Version",
+    "regexValue":"\\S+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk3tjof2wkx3bobygy2ldmf2gs33ol5uwizlooruwm2lfoi000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_user_name",
+    "preContext":"\\s*UserName:\\s+",
+    "postContext":";\\s*(Parameters|Return)*",
+    "regexValue":"\\S*",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"aw_user_password",
+    "preContext":"password\\.",
+    "postContext":" \\-",
+    "regexValue":"\\w+",
+    "internalName":"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te",
+    "constraints":"{\"searchTerms\":\"LdapDirectoryService\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Airwatch - Compromised devices",
+    "info":"Device is marked as compromised.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Marking device as compromised\",\"startTimeMillis\":1565681437705,\"endTimeMillis\":1565681737704,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"AirWatch Console Login attempt failed.",
+    "info":"Login attempt to AirWatch Console exceeded the maximum attempts to login.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1565681416382,\"endTimeMillis\":1565681716381,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3dn5xhg33mmvpws3twmfwgszc7ovzwk4q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_console_invalid_user\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3dn5xhg33mmvpws3twmfwgszc7ovzwk4q0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_console_invalid_user\",\"preContext\":\"invalid user for console login: \",\"postContext\":\"[\\\\s|\\\\n|\\\\r|\\\\t]*\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3dn5xhg33mmvpws3twmfwgszc7ovzwk4q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"webconsole\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"Airwatch - Device suspected as compromised",
+    "info":"Device is suspected as compromised.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1565681454663,\"endTimeMillis\":1565681754662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Device suspected as compromised\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"component\",\"internalName\":\"component\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"AirWatch DeviceService",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"DeviceServices Exceptions",
+          "info":"Exceptions happened in DeviceService.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"exception\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"DeviceServices Error Events",
+          "info":"Error events logged by the DeviceService.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Compromised Devices",
+          "info":"Log events of compromised devices.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Marking device as compromised\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Log Events grouped by DeviceIdentifier",
+          "info":"Log events grouped by DeviceIdentifier.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3emv3gsy3fnfsgk3tunftgszls\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_deviceidentifier\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3emv3gsy3fnfsgk3tunftgszls\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_deviceidentifier\",\"preContext\":\"DeviceIdentifier:[\\\\s|\\\\n|\\\\r|\\\\t]+\",\"postContext\":\"[\\\\s|\\\\n|\\\\r|\\\\t]*\",\"regexValue\":\"[a-zA-Z0-9]*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3emv3gsy3fnfsgk3tunftgszls\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Profile Payloads grouped by OS",
+          "info":"Profile payloads grouped by the device type.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3qojxwm2lmmvpxaylznrxwcza0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_profile_payload\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3qojxwm2lmmvpxaylznrxwcza0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_profile_payload\",\"preContext\":\"[\\\\s|\\\\r|\\\\n|\\\\t]+\",\"postContext\":\"[\\\\s|\\\\r|\\\\n|\\\\t]+ProfilePayload data:\",\"regexValue\":\"([a-zA-Z]+|([a-zA-Z]+\\\\s[0-9\\\\/A-Za-z]+))\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3qojxwm2lmmvpxaylznrxwcza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Suspected Device Compromises",
+          "info":"Log events of suspected device compromises.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Device suspected as compromised\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"deviceservices\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"component\",\"internalName\":\"component\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Beacon Payload grouped by DeviceIdentifier",
+          "info":"Beacon payloads grouped by DeviceIdentifier.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3cmvqwg33ol5ygc6lmn5qwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3emv3gsy3fnfsgk3tunftgszls\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_deviceidentifier\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3emv3gsy3fnfsgk3tunftgszls\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_beacon_payload\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"The incoming Beacon payload contained these values\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3cmvqwg33ol5ygc6lmn5qwi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_aspect_deviceidentifier\",\"preContext\":\"DeviceIdentifier:[\\\\s|\\\\n|\\\\r|\\\\t]+\",\"postContext\":\"[\\\\s|\\\\n|\\\\r|\\\\t]*\",\"regexValue\":\"[a-zA-Z0-9]*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3emv3gsy3fnfsgk3tunftgszls\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Enrolled users",
+          "info":"Widget showing all the enrolled users with the number of devices they own.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf6zdfozuwgzk7nfsa0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf65ltmvzf62le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_enrolled_user_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf65ltmvzf62le\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_aspect_enrolled_device_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf6zdfozuwgzk7nfsa0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_enrolled_device_id\",\"preContext\":\"\\\\s*device ID\\\\s*\",\"postContext\":\"\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf6zdfozuwgzk7nfsa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"deviceservices,devicemanagement\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_aspect_enrolled_user_id\",\"preContext\":\"\\\\s+EnrollmentUserID\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf65ltmvzf62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"MyDevice Failure events events grouped by user",
+          "info":"MyDevice Failure events events grouped by user",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"mydevice\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw26lemv3gsy3fl52xgzls\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_mydevice_user\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw26lemv3gsy3fl52xgzls\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_auth_failure_reason\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_auth_failure_reason\",\"preContext\":\"Error\\\\s*\\\\S*\\\\s*\",\"postContext\":\"\\\\s*(for|\\\\.)\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"aw_mydevice_user\",\"preContext\":\"User:\",\"postContext\":\"\\\\,\\\\s*\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pw26lemv3gsy3fl52xgzls\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"mydevice\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Device error events over time ",
+          "info":"Device error events over time grouped by log level",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"mydevice\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Services Error events grouped by device id, device serial number",
+          "info":"Services Error events grouped by device id, device serial number",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"services\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxiylsm5sxizlel5wg6z27mrsxm2ldmvpwsza0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3tmvzgsylml5xhk3lcmvza0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_targeted_log_device_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxiylsm5sxizlel5wg6z27mrsxm2ldmvpwsza0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_device_serial_number\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3tmvzgsylml5xhk3lcmvza0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"aw_device_serial_number\",\"preContext\":\"\\\\-\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3tmvzgsylml5xhk3lcmvza0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"serial number\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"services\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_targeted_log_device_id\",\"preContext\":\"\\\\d*\\\\-\",\"postContext\":\"\\\\]   \\\\(\\\\d*\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxiylsm5sxizlel5wg6z27mrsxm2ldmvpwsza0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"MyDevice Error events grouped by failure reason",
+          "info":"MyDevice Error events grouped by failure reason",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"mydevice\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_auth_failure_reason\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_auth_failure_reason\",\"preContext\":\"Error\\\\s*\\\\S*\\\\s*\",\"postContext\":\"\\\\s*(for|\\\\.)\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"AirWatch Console",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Console Invalid User Login",
+          "info":"Failed user attempts to login.",
+          "gridWidth":"1/2",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3dn5xhg33mmvpws3twmfwgszc7ovzwk4q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_console_invalid_user\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3dn5xhg33mmvpws3twmfwgszc7ovzwk4q0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_console_invalid_user\",\"preContext\":\"invalid user for console login: \",\"postContext\":\"[\\\\s|\\\\n|\\\\r|\\\\t]*\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3dn5xhg33mmvpws3twmfwgszc7ovzwk4q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"webconsole\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SSO Login Failures to Console",
+          "info":"Console login failures through vIDM.",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authenticate\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"webconsole\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"login failed\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Commands Sent by Console Admin",
+          "info":"Commands sent by console to devices.",
+          "gridWidth":"1/2",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7nfsa0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"Administrators\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7ojxwyzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_console_user_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7nfsa0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_console_user_role\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7ojxwyzi0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_console_user_id\",\"preContext\":\"userID: \",\"postContext\":\"\\\\, userRole\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7nfsa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"webconsole\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_console_user_role\",\"preContext\":\"userRole: \",\"postContext\":\"\\\\, roleLG\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7ojxwyzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"webconsole\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_console_user_type\",\"preContext\":\"UserType: \",\"postContext\":\"\\\\, userID\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7ovzwk4s7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"webconsole\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Active Application Groups",
+          "info":"Application groups",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mfyha3djmnqxi2lpnzpwo4tpovya0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_console_application_group\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mfyha3djmnqxi2lpnzpwo4tpovya0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_console_application_group\",\"preContext\":\"ApplicationGroup ID is\\\\s*\",\"postContext\":\"\\\\s+\\\\S*\",\"regexValue\":\"\\\\d*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mfyha3djmnqxi2lpnzpwo4tpovya0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"webconsole\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"AirWatch API",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Failed APIs",
+          "info":"API's whose execution has failed grouped by UserName.",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"fail*,error\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"airwatchapi\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv65ltmvzg4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_api_username\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv65ltmvzg4ylnmu000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_api_username\",\"preContext\":\"\\\\s*UserName:\\\\s*\",\"postContext\":\"\\\\;\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv65ltmvzg4ylnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All API Requests",
+          "info":"API requests to the API server.",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1533946735223,\"endTimeMillis\":1564064062399,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2i0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_api_request_uri\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2i0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_api_request_uri\",\"preContext\":\"RequestUri:\\\\s+\",\"postContext\":\"\\\\;\\\\s*RequestMethod:\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2i0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"airwatchapi\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"APIs with ResponseTime > 1 sec",
+          "info":"APIs that take more than one sec to respond.",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2i0\",\"operator\":\"EXISTS\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"airwatchapi\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfonyg63ttmvpxi2lnmu000000\",\"operator\":\"GREATER_THAN\",\"value\":\"1000\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_api_request_uri\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2i0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_api_request_uri\",\"preContext\":\"RequestUri:\\\\s+\",\"postContext\":\"\\\\;\\\\s*RequestMethod:\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfof2wk43ul52xe2i0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"airwatchapi\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_aspect_api_response_time\",\"preContext\":\"ResponseTime:\\\\s+\",\"postContext\":\"ms[;\\\\s]+ RequestHeaders:\",\"regexValue\":\"\\\\d*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3bobuv64tfonyg63ttmvpxi2lnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"airwatchapi\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Device Distribution",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Device OS Distribution",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"android\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpwsza0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_console_device_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpwsza0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_console_device_type\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_console_device_id\",\"preContext\":\"DeviceId: \",\"postContext\":\"\\\\, DeviceType\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"console\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_console_device_type\",\"preContext\":\"DeviceType: \",\"postContext\":\"\\\\,\\\\s+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"console\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Device OS Usage Over Time",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_console_device_type\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_console_device_type\",\"preContext\":\"DeviceType: \",\"postContext\":\"\\\\,\\\\s+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"console\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Android Model Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"android\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_console_device_type\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_console_device_type\",\"preContext\":\"DeviceType: \",\"postContext\":\"\\\\,\\\\s+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg33oonxwyzk7mrsxm2ldmvpxi6lqmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"console\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Android Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc3teojxwszc7ozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_android_ver\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc3teojxwszc7ozsxe000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_android_ver\",\"preContext\":\"(Android |Android: )\",\"postContext\":\"(\\\\;|\\\\)|\\\\:)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc3teojxwszc7ozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iOS Model Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"iOS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf6zdfozuwgzk7nfsa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_aspect_enrolled_device_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf6zdfozuwgzk7nfsa0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_aspect_enrolled_device_id\",\"preContext\":\"\\\\s*device ID\\\\s*\",\"postContext\":\"\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc43qmvrxix3fnzzg63dmmvsf6zdfozuwgzk7nfsa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"deviceservices,devicemanagement\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iOS Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"vidm-aws\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pws33tl53gk4q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_ios_ver\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pws33tl53gk4q0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_ios_ver\",\"preContext\":\"iOS \",\"postContext\":\"(\\\\;|\\\\)|\\\\:|\\\\s+)\",\"regexValue\":\"\\\\d+.\\\\d+.\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pws33tl53gk4q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Chrome Browser Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg2dsn5wwkx3wmvza0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_chrome_ver\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg2dsn5wwkx3wmvza0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_chrome_ver\",\"preContext\":\"Chrome/\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwg2dsn5wwkx3wmvza0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Firefox Browser Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"firefox\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_firefox_ver\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwm2lsmvtg66c7ozsxe000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_firefox_ver\",\"preContext\":\"Firefox/\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwm2lsmvtg66c7ozsxe000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Safari Browser Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"safari\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxgylgmfzgsx3wmvza0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_safari_ver\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxgylgmfzgsx3wmvza0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_safari_ver\",\"preContext\":\"Safari/\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxgylgmfzgsx3wmvza0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Boxer",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Events grouped by Log Level",
+          "info":"Events grouped by Log level",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Exceptions",
+          "info":"Events that are exceptions",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Exception\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Errors",
+          "info":"All Error events",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Top errors",
+          "info":"Top errors in the events",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Header information grouped by App version",
+          "info":"Header information events grouped by the app version.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"HEADER\"},{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6ylqobpxmzlsonuw63q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_boxer_app_version\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6ylqobpxmzlsonuw63q0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_boxer_app_version\",\"preContext\":\"APP\\\\s+VERSION\\\\s+NAME\\\\s+=\\\\s+\",\"postContext\":\"\",\"regexValue\":\"[0-9\\\\.]+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6ylqobpxmzlsonuw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events grouped by DeviceId",
+          "info":"Events grouped by Device id.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3jmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_device_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3jmq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_device_id\",\"preContext\":\"DeviceId:\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3jmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"app\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events grouped by Application",
+          "info":"All events grouped by application name.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk3tjof2wkx3bobygy2ldmf2gs33ol5uwizlooruwm2lfoi000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_unique_application_identifier\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk3tjof2wkx3bobygy2ldmf2gs33ol5uwizlooruwm2lfoi000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_unique_application_identifier\",\"preContext\":\"UniqueApplicationIdentifer: \",\"postContext\":\"\\\\, Version\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk3tjof2wkx3bobygy2ldmf2gs33ol5uwizlooruwm2lfoi000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Account wipe",
+          "info":"Account wipe events.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6yldmnpxo2lqmvsf64tfmfzw63q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_boxer_acc_wiped_reason\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6yldmnpxo2lqmvsf64tfmfzw63q0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_boxer_acc_wiped_reason\",\"preContext\":\"Boxer wiped : \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6yldmnpxo2lqmvsf64tfmfzw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sync Requests",
+          "info":"Sync request events.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"logfolder\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv6yldmnxxk3tul5uwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv623fpe000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv63lbnfwge33y\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv65dzobsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_boxer_sync_account_id\",\"preContext\":\"Syncing account \",\"postContext\":\"\\\\s{1,}mailbox\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv6yldmnxxk3tul5uwi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_boxer_sync_key\",\"preContext\":\"(Email|Calendar|Contacts)\\\\)\\\\s{1,}with\\\\s{1,}syncKey \",\"postContext\":\"\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv623fpe000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_boxer_sync_mailbox\",\"preContext\":\"mailbox\\\\s{1,}\\\"\",\"postContext\":\"\\\"\\\\s{1,}\\\\(class\",\"regexValue\":\"[a-zA-Z]+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv63lbnfwge33y\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_boxer_sync_type\",\"preContext\":\"\\\\(class\\\\s{1,}\",\"postContext\":\"\\\\)\\\\s{1,}with\",\"regexValue\":\"Email|Contacts|Calendar\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv65dzobsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sync Result",
+          "info":"Sync response events grouped result code.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"logfolder\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv6y3pnvwwc3tel5zgk43vnr2a0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_boxer_sync_command_result\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv6y3pnvwwc3tel5zgk43vnr2a0000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_boxer_sync_command_result\",\"preContext\":\"Sync command finished with result \",\"postContext\":\"\",\"regexValue\":\"\\\\d\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf643znzrv6y3pnvwwc3tel5zgk43vnr2a0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Ping Tasks",
+          "info":"Events that are start of a ping task.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"logfolder\",\"operator\":\"CONTAINS\",\"value\":\"Boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv6yldmnpwsza0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_boxer_ping_acc_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv6yldmnpwsza0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_boxer_ping_acc_id\",\"preContext\":\"Ping task starting for\\\\s{1,}\",\"postContext\":\"\\\\s{0,}\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv6yldmnpwsza0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Ping Results",
+          "info":"Results of the ping request.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv64tfon2wy5a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"logfolder\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_boxer_ping_result\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv64tfon2wy5a0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_boxer_ping_result\",\"preContext\":\"Exchange ping finished with result\\\\s{1,}\",\"postContext\":\"\\\\s{0,}\",\"regexValue\":\"[\\\\-]*\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf64djnztv64tfon2wy5a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Battery level events grouped by DeviceId",
+          "info":"Battery level events grouped by Device ID.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6ytbor2gk4tzl5wgk5tfnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"logfolder\",\"operator\":\"CONTAINS\",\"value\":\"boxer\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3jmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_device_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3jmq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_boxer_battery_level\",\"preContext\":\"Battery level\\\\s{1,}:\\\\s{1,}\",\"postContext\":\"\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwe33ymvzf6ytbor2gk4tzl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_device_id\",\"preContext\":\"DeviceId:\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwizlwnfrwkx3jmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"app\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Application Transitions",
+          "info":"Application transition events from background to foreground and vice versa.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"message\",\"operator\":\"CONTAINS\",\"value\":\"App transitioning from\"},{\"internalName\":\"logfolder\",\"operator\":\"STARTS_WITH\",\"value\":\"boxer\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Air Watch Login Troubleshooting",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Percentage of Login Password Errors",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piepercentage\":true,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"password\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_auth_failure_reason\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_auth_failure_reason\",\"preContext\":\"Error\\\\s*\\\\S*\\\\s*\",\"postContext\":\"\\\\s*(for|\\\\.)\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"User Login Troubleshooting",
+          "info":"The queries in this list will contain issues about users vIDM password.<br>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Users with Account Locked",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te\",\"displayName\":\"aw_user_password\",\"displayNamespace\":\"Workspace ONE\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te\",\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te\",\"operator\":\"CONTAINS\",\"value\":\"accountlocked,account locked\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_user_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Users with Authentication Failed",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed,error\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpw4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_user_name\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpw4ylnmu000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_auth_failure_reason\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_auth_failure_reason\",\"preContext\":\"Error\\\\s*\\\\S*\\\\s*\",\"postContext\":\"\\\\s*(for|\\\\.)\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_user_name\",\"preContext\":\"\\\\s*UserName:\\\\s+\",\"postContext\":\";\\\\s*(Parameters|Return)*\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpw4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piepercentage\\\":false,\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          }, {
+            "name":"Users with Expired Password",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te\",\"displayName\":\"aw_user_password\",\"displayNamespace\":\"Workspace ONE\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te\",\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"password\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"expired\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwk3lbnfwf64dxmrpwc5luna000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_email_pwd_auth\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwk3lbnfwf64dxmrpwc5luna000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwk3lbnfwf64dxmrpwc5luna000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"},{\"displayName\":\"aw_user_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpxaylton3w64te\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of Users with Account Locked",
+          "info":"Number of unique IDM users locked out.",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"accountlocked,account locked\"},{\"internalName\":\"component\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Users with Authentication Failed",
+          "info":"Number of Users with Authentication Failed<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,failed\"},{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpw4ylnmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_user_name\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpw4ylnmu000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_auth_failure_reason\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_auth_failure_reason\",\"preContext\":\"Error\\\\s*\\\\S*\\\\s*\",\"postContext\":\"\\\\s*(for|\\\\.)\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc5lunbpwmyljnr2xezk7ojswc43pny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_user_name\",\"preContext\":\"\\\\s*UserName:\\\\s+\",\"postContext\":\";\\\\s*(Parameters|Return)*\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxk43fojpw4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Users with Expired Password",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"password\"},{\"internalName\":\"component\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"expired\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Password Authentications - Success",
+          "info":"Trend of successful Password-based Authentications",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"cloudconnector\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication,authenticated\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"success\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"App Catalog Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Incompatible devices by device Id",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"not compatible\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"appcatalog\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxiylsm5sxizlel5wg6z27mrsxm2ldmvpwsza0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_targeted_log_device_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxiylsm5sxizlel5wg6z27mrsxm2ldmvpwsza0\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_targeted_log_device_id\",\"preContext\":\"\\\\d*\\\\-\",\"postContext\":\"\\\\]   \\\\(\\\\d*\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pxiylsm5sxizlel5wg6z27mrsxm2ldmvpwsza0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"App catalog events over time",
+          "info":"Info events over time grouped by hostname",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"appcatalog\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Errors Over Time by application ID",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"appcatalog\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_application_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_application_id\",\"preContext\":\"application id \",\"postContext\":\" on\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appcatalog\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Application errors by application ID",
+          "info":"Application error events over time grouped by application ID",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"inline\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dql5rwc5dbnrxwox3fojzg64s7ojswc43pny000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_application_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"aw_app_catalog_error_reason\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dql5rwc5dbnrxwox3fojzg64s7ojswc43pny000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_app_catalog_error_reason\",\"preContext\":\"Error\\\\s*\\\\S*\\t\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dql5rwc5dbnrxwox3fojzg64s7ojswc43pny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appcatalog\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"aw_application_id\",\"preContext\":\"application id \",\"postContext\":\" on\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appcatalog\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Warnings Over Time by application ID",
+          "info":"Warning events over time grouped by hostname",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"appcatalog\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"warn,warning\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_application_id\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_application_id\",\"preContext\":\"application id \",\"postContext\":\" on\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appcatalog\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Info events over time",
+          "info":"Info events over time grouped by hostname<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"appcatalog\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO,info,informational,information\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_application_id\",\"preContext\":\"application id \",\"postContext\":\" on\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwc4dqnruwgylunfxw4x3jmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appcatalog\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Air Watch Cloud Connector",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"AWCM  events over time by log level",
+          "info":"Air Watch Cloud Messaging events over time by log level",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"awcm\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_log_level\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_log_level\",\"preContext\":\"\\\\,\\\\d+\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\S*\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cloud Connector error events over time",
+          "info":"Cloud Connector error events over time grouped by log level",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"cloudconnector\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Cloud Connector events over time ",
+          "info":"Cloud Connector events over time&nbsp;",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1563699376102,\"endTimeMillis\":1565041117662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"cloudconnector\"},{\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Workspace ONE\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"aw_cc_md_svc_log_level\",\"preContext\":\"\\\\d*\\\\)\\\\s*\",\"postContext\":\"\\\\s*\\\\S*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenc7mnxw2ltwnv3wc4tffz3w64tlonygcy3ffvxw4zlbo5pwgy27nvsf643wmnpwy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cloudconnector,mydevice,services,webconsole,deviceservices\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"ws1_aw_group",
+    "info":"Workspace One air watch agent group.<br><br><span>This is the agent group configuration for Workspace One content pack.</span><span>You can find this under Administration -&gt; Management -&gt; Agents -&gt; All Agents drop down.</span><span>To apply,copy this template to active groups , add filters and save.</span>",
+    "agentConfig":"[filelog|Deviceservices-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=DeviceServices*.log\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}:\\d{2}:\\d{2}\ntags={\"product\":\"airwatch\",\"component\":\"deviceservices\"}\n\n[filelog|Weblog-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=WebLogFile*.log\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}:\\d{2}:\\d{2}\ntags={\"product\":\"airwatch\",\"component\":\"WebConsole\"}\n\n[filelog|WebConsole]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-WebConsole.txt\ntags={\"product\":\"airwatch\",\"component\":\"WebConsole\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|Ils]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=*.log\ntags={\"product\":\"airwatch\",\"component\":\"IIs\"}\nevent_marker=^\\d{4}\\-\\d{2}\\-\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\n\n[filelog|AirwatchAPI]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-AirwatchAPI.txt\ntags={\"product\":\"airwatch\",\"component\":\"AirwatchAPI\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|Services]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-Services.txt\ntags={\"product\":\"airwatch\",\"component\":\"Services\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|CloudConnector]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-CloudConnector.txt\ntags={\"product\":\"airwatch\",\"component\":\"CloudConnector\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|AirWatchServices]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=*.log\ntags={\"product\":\"airwatch\",\"component\":\"AirWatchServices\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|AWCM]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-AWCM.txt\ntags={\"product\":\"airwatch\",\"component\":\"AWCM\"}\nevent_marker=^\\d{4}\\-\\d{2}\\-\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\n\n[filelog|DeviceServices]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-DeviceServices.txt\ntags={\"product\":\"airwatch\",\"component\":\"DeviceServices\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|MyDevice]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-MyDevice.txt\ntags={\"product\":\"airwatch\",\"component\":\"MyDevice\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|AppCatalog]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-AppCatalog.txt\ntags={\"product\":\"airwatch\",\"component\":\"AppCatalog\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|DeviceManagement]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=log-insight-DeviceManagement.txt\ntags={\"product\":\"airwatch\",\"component\":\"DeviceManagement\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|TargetedLogging]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=*.log\ntags={\"product\":\"airwatch\",\"component\":\"TargetedLogging\"}\nevent_marker=^\\S*\\.\\S*\\.\\S*\\:\\s*\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n\n[filelog|EnrollShortcut]\n; IMPORTANT: Change the directory as per the environment\ndirectory=**\ninclude=*.log\ntags={\"product\":\"airwatch\",\"component\":\"EnrollShortcut\"}\nevent_marker=^\\d{4}\\/\\d{2}\\/\\d{2}\\s*\\d{2}\\:\\d{2}\\:\\d{2}\\.\n"
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware Inc.",
+  "url":"https://www.vmware.com/in/products/workspace-one.html",
+  "contentVersion":"1.0",
+  "info":"The workspace one content pack provides customized collection, analysis and graphical representation of various workspace one log files. You can use WorkSpace One Log Insight Content Pack to collect data using the syslog and cfapi protocol. This content pack helps you analyze messages received from the Console, DeviceService and API services, and display the details in the dashboard. The admin can easily monitor the anomalies in the system through the dashboard.<br><br>This content pack contains dashboards and widgets that graphically represent the logs from various workspace one services and Boxer app. The widgets provide information on logs from workspace one components such as AirWatch Console, Deviceservice, API services and Boxer app. The logs include audits, device logs, beacon samples, profile payloads, commands, failed API's, errors and exceptions. Admins can drill into these logs to see where and why the events were generated.&nbsp;",
+  "instructions":"Installation instructions:<br><br>Once the content pack is installed configure the agent. Goto Admin → Agents → Available Templates, choose Workspace One template. Copy the template, specify a name.&nbsp;<br><br>Add the filter, from which IP the logs are expected. Save the agent group and download the agent.<br><br><span>Steps To apply the agent group configuration as described above:</span><br><br><span>• Go to the Administration -&gt; Agents&nbsp;page (requires Super Admin privileges)</span><br><span>• Select the All Agents drop-down at the top of the window and select the&nbsp;</span><span style=\"font-style: italic;\">Copy Template</span><span>&nbsp;button to the right of the appropriate Workspace One agent group</span><br><span>• Add the desired filters to restrict which agent will receive the configuration (optional)</span><br><span>• Select the&nbsp;</span><span style=\"font-style: italic;\">Refresh</span><span>&nbsp;button at the top of the page</span><br><span>• Select the&nbsp;</span><span style=\"font-style: italic;\">Save Configuration</span><span>&nbsp;button at the bottom of the page</span><br><br>Agents: vRealize Log Insight agents collect events from log files on Linux and Windows machines and forwards them to the vRealize Log Insight server. The agent has to be installed on the machines whose logs are to be collected. To do that, Download the workspace one agent from Log Insight server →&nbsp; Administration →&nbsp; Agents →&nbsp; From the drop-down choose the workspace one agent → click on Download Log Insight Agent Version 4.5.1.<br><br>Once the agent is installed and the agent group applied, you should be able to see the logs on the Dashboard of the Log Insight as agent starts sending the log events to Log Insight server.",
+  "icon":"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"
+}
